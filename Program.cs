@@ -4,24 +4,16 @@
     {
         static void Main(string[] args)
         {
-string username="abcd",usernameenter;
-string password="1234",passwordenter;
-s:;
-Console.WriteLine("enter your username: ");
-usernameenter=Console.ReadLine();
-Console.WriteLine("enter your password: ");
-passwordenter=Console.ReadLine();
-if(passwordenter==password && usernameenter==username)
-{
-      string username = "abcd", usernameenter;
+                string username = "abcd", usernameenter;
     string password = "1234", passwordenter;
 s:;
+    Console.Clear();
+    Console.BackgroundColor = ConsoleColor.White;
     Console.ForegroundColor = default;
     Console.Write("enter your username: ");
     usernameenter = Console.ReadLine();
     Console.Write("enter your password: ");
     passwordenter = Console.ReadLine();
-    Console.Clear();
     if (passwordenter == password && usernameenter == username)
     {
     l:
@@ -33,22 +25,29 @@ s:;
         //3- mashin hesasb 
         //
         //4-khoruj az barname
+        Console.Clear();
+        Console.WriteLine("welcome {0}",username);
+        Console.WriteLine();
         int select = 0;
-        Console.WriteLine("select:");
+        Console.BackgroundColor= ConsoleColor.Red;
+        Console.ForegroundColor = ConsoleColor.White;
+
         Console.WriteLine("1- Diplay");
         Console.WriteLine("2- Game");
         Console.WriteLine("3- calculator ");
         Console.WriteLine("4- exit ");
+        Console.Write("your selection: ");
+        Console.ForegroundColor = ConsoleColor.Blue;
         select = Convert.ToInt16(Console.ReadLine());
+        Console.BackgroundColor = ConsoleColor.Yellow;
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
 
         //taghiree rang ha (RGB)
         if (select == 1)
         {
-            Console.WriteLine("part 1");
             char l = ' ';
-            Console.WriteLine("enter b for BackgroundColor or f for ForegroundColor");
+            Console.Write("enter b for BackgroundColor or f for ForegroundColor:");
             l = Convert.ToChar(Console.ReadLine());
-
             char color;
             //for background
             if (l == 'b')
@@ -176,12 +175,12 @@ s:;
     }
     else
     {
-        Console.Clear();
-        Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine("your entered password was WRONG!");
-        Console.ForegroundColor = default;
+        Console.Clear() ;
+        Console.WriteLine("*** YOU ENTERED WRONG USERNAME OR PASSWORD! ***");
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.Write("enter a new username: ");
         username = Console.ReadLine();
+
         Console.Write("enter a new password: ");
         password = Console.ReadLine();
         Console.Clear();
