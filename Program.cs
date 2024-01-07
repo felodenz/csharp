@@ -4,7 +4,15 @@
     {
         static void Main(string[] args)
         {
-        
+string username="abcd",usernameenter;
+string password="1234",passwordenter;
+Console.WriteLine("enter your username: ");
+usernameenter=Console.ReadLine();
+Console.WriteLine("enter your password: ");
+passwordenter=Console.ReadLine();
+s:;
+if(passwordenter==password && usernameenter==username)
+{
        l:
             //inja menu ast.
             //1- karbar inja mitavanad range background v foreground ra az miane rang haye sabz ghermez abi entekhab konad
@@ -149,6 +157,15 @@
             }
 
         }
+        }
+else{
+ Console.Write("enter a new username: ")
+usernameenter=Console.ReadLine();
+
+Console.Write("enter a new password: ")
+passwordenter =Console.ReadLine();
+goto s;
+}
         }
     }
 
