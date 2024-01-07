@@ -6,11 +6,11 @@
         {
 string username="abcd",usernameenter;
 string password="1234",passwordenter;
+s:;
 Console.WriteLine("enter your username: ");
 usernameenter=Console.ReadLine();
 Console.WriteLine("enter your password: ");
 passwordenter=Console.ReadLine();
-s:;
 if(passwordenter==password && usernameenter==username)
 {
        l:
@@ -160,10 +160,10 @@ if(passwordenter==password && usernameenter==username)
         }
 else{
  Console.Write("enter a new username: ")
-usernameenter=Console.ReadLine();
+username=Console.ReadLine();
 
 Console.Write("enter a new password: ")
-passwordenter =Console.ReadLine();
+password=Console.ReadLine();
 goto s;
 }
         }
