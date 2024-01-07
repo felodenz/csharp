@@ -4,12 +4,16 @@
     {
         static void Main(string[] args)
         {
-                string username = "abcd", usernameenter;
+                    int situation = 0;
+    string username = "abcd", usernameenter;
     string password = "1234", passwordenter;
 s:;
     Console.Clear();
-    Console.BackgroundColor = ConsoleColor.White;
-    Console.ForegroundColor = default;
+    if (situation == 0)
+    {
+        Console.BackgroundColor = ConsoleColor.White;
+        Console.ForegroundColor = default;
+    }
     Console.Write("enter your username: ");
     usernameenter = Console.ReadLine();
     Console.Write("enter your password: ");
@@ -26,33 +30,40 @@ s:;
         //
         //4-khoruj az barname
         Console.Clear();
-        Console.WriteLine("welcome {0}",username);
+        Console.WriteLine("welcome {0}", username);
         Console.WriteLine();
         int select = 0;
-        Console.BackgroundColor= ConsoleColor.Red;
-        Console.ForegroundColor = ConsoleColor.White;
-
+        if (situation == 0) { 
+             Console.BackgroundColor = ConsoleColor.Red;
+             Console.ForegroundColor = ConsoleColor.White;
+         }
         Console.WriteLine("1- Diplay");
         Console.WriteLine("2- Game");
         Console.WriteLine("3- calculator ");
         Console.WriteLine("4- exit ");
         Console.Write("your selection: ");
-        Console.ForegroundColor = ConsoleColor.Blue;
-        select = Convert.ToInt16(Console.ReadLine());
-        Console.BackgroundColor = ConsoleColor.Yellow;
-        Console.ForegroundColor = ConsoleColor.DarkCyan;
 
+        if (situation == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+        }
+        select = Convert.ToInt16(Console.ReadLine());
+        if (situation == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.White;
+        }
         //taghiree rang ha (RGB)
         if (select == 1)
         {
             char l = ' ';
+            situation += 1;
             Console.Write("enter b for BackgroundColor or f for ForegroundColor:");
             l = Convert.ToChar(Console.ReadLine());
             char color;
             //for background
             if (l == 'b')
             {
-                Console.WriteLine("r for red / g for green / b for blue");
+                Console.Write("r for red / g for green / b for blue: ");
                 color = Convert.ToChar(Console.ReadLine());
                 switch (color)
                 {
@@ -73,7 +84,7 @@ s:;
             else if (l == 'f')
             {
                 //for foreground
-                Console.WriteLine("r for red / g for green / b for blue");
+                Console.Write("r for red / g for green / b for blue: ");
                 color = Convert.ToChar(Console.ReadLine());
                 switch (color)
                 {
@@ -102,7 +113,7 @@ s:;
             {
             K:;
                 int usernumber;
-                Console.WriteLine("enter your guess number(between 1-100) :");
+                Console.Write("enter your guess number(between 1-100) :");
                 usernumber = Convert.ToInt16(Console.ReadLine());
                 if (usernumber >= 0 && usernumber <= 100)
                 {
@@ -175,14 +186,32 @@ s:;
     }
     else
     {
-        Console.Clear() ;
+        Console.Clear();
         Console.WriteLine("*** YOU ENTERED WRONG USERNAME OR PASSWORD! ***");
-        Console.ForegroundColor = ConsoleColor.Green;
+        if (situation == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+        }
         Console.Write("enter a new username: ");
+        if (situation == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+        }
         username = Console.ReadLine();
-
+        if (situation == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+        }
         Console.Write("enter a new password: ");
+        if (situation == 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+        }
         password = Console.ReadLine();
+        if (situation == 0)
+        {
+            Console.ForegroundColor = default;
+        }
         Console.Clear();
         goto s;
     }
