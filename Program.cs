@@ -164,6 +164,7 @@ username=Console.ReadLine();
 
 Console.Write("enter a new password: ")
 password=Console.ReadLine();
+Console.Clear();
 goto s;
 }
         }
